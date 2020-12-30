@@ -3,7 +3,7 @@
 <div class='indexPage'>
   <h1>欢迎来到首页！！！！</h1>
    <div id='nav'>
-      <router-link to='/login'>点击跳登录页</router-link>
+      <router-link to='/'>点击跳登录页</router-link>
    </div>
 </div>
 </template>
@@ -44,9 +44,9 @@ beforeUpdate() {},
 //生命周期 - 更新之后
 updated() {},
 //生命周期 - 销毁之前
-beforeDestroy() {},
+beforeUnmount() {},
 //生命周期 - 销毁完成
-destroyed() {},
+unmounted() {},
 //如果页面有keep-alive缓存功能，这个函数会触发
 activated() {},
 }
