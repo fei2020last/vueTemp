@@ -2,6 +2,7 @@
 <template>
   <div class="loginPage">
     <h1>欢迎来到登录页</h1>
+    <h2 style="color:#42b983" @click="goIndex()">跳转到首页</h2>
   </div>
 </template>
 
@@ -24,7 +25,11 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    initMethod() {}
+    initMethod() {},
+
+    goIndex() {
+      this.$router.push({ name: "index" });
+    },
   },
   //生命周期 - 创建之前
   beforeCreate() {},

@@ -2,6 +2,9 @@
 <template>
 <div class='indexPage'>
   <h1>欢迎来到首页！！！！</h1>
+   <div id='nav'>
+      <router-link to='/login'>点击跳登录页</router-link>
+   </div>
 </div>
 </template>
 
