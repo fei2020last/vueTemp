@@ -1,6 +1,8 @@
 <!-- 登录页 -->
 <template>
-  <div class="loginPage"></div>
+  <div class="loginPage">
+    <h1>欢迎来到登录页</h1>
+  </div>
 </template>
 
 <script>
