@@ -2,9 +2,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 const login = () => import('@/views/login/login.vue') //登录
 const routes = [{
-    name: 'login',
+    name: 'index',
     path: '/',
-    component: login
+    component: () => import('../views/index/index.vue') //首页
   },
 
   {

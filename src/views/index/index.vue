@@ -1,9 +1,10 @@
 <!-- 首页 -->
 <template>
 <div class='indexPage'>
-  <h1>欢迎来到首页！！！！</h1>
-   <div id='nav'>
-      <router-link to='/'>点击跳登录页</router-link>
+   <div class="">
+      <!-- 卡在VUE3不能使用Element-UI -->
+      <el-select></el-select>
+      
    </div>
 </div>
 </template>
