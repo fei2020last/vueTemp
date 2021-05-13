@@ -1,10 +1,15 @@
 // 路由配置文件
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 const login = () => import('@/views/login/login.vue') //登录
+
 const routes = [{
-    name: 'index',
+    path: '/login',
+    name: 'login',
+    component: login
+  },
+  {
     path: '/',
-    component: () => import('../views/index/index.vue') //首页
+    redirect: '/login'
   },
 
   {
