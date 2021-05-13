@@ -4,20 +4,18 @@ import store from '../store'
 import { GlobalDatas } from '../utils/GlobalDatas'
 
 // 配置API接口地址
-// const baseUrl = "http://192.168.4.229:8088";
-// const baseUrl = "http://192.168.4.230:8088";
-// const baseUrl = "/sthj";
-// const baseUrl = "http://rap2api.taobao.org/app/mock/242885/";
-
 var instance = axios.create({
   baseURL: GlobalDatas.baseAxisUrl,
   withCredentials: true,
   timeout: 20000
 })
 
+console.log("请求地址",GlobalDatas.baseAxisUrl);
+
 // http request 拦截器
 instance.interceptors.request.use(
   (config) => {
+    console.log("请求拦截",config);
     config.headers['Content-Type'] = 'application/json;charset=UTF-8'
     if (window.sessionStorage.getItem('userInfo_soft')) {
       var str = window.sessionStorage.getItem('userInfo_soft')
@@ -35,10 +33,8 @@ instance.interceptors.request.use(
 // http response 拦截器
 instance.interceptors.response.use(
   (res) => {
+    console.log("响应拦截",res);
     if (res.status === 200) {
-      // if (res.data.data.length == 0) return;
-      // console.log(res.data.data);
-
       return Promise.resolve(res)
     } else {
       return Promise.reject(res)
@@ -61,11 +57,11 @@ instance.interceptors.response.use(
             .catch((err) => {
               err
             })
-
+          break;
         case 500:
           console.log(500)
-
           this.$message.error('网络好像有点问题')
+          break;
       }
       if (err.response.data.message.indexOf('401') != -1) {
         store.commit('logOut')
@@ -104,8 +100,10 @@ const xhr = {
   post: (url, params) => {
     return instance.post('/api' + url, params)
   },
+
+  //调试接口只调了登录，之后以后再调
   login: (params) => {
-    return instance.post('/login', params)
+    return instance.post("/admin/login", params)
   },
   logout: (params) => {
     return instance.get('/logout', params)
@@ -138,21 +136,3 @@ const def = function(url, params) {
 }
 
 export { xhr, def }
-
-/**
- * post方法，对应post请求
- * @param {String} url [请求的url地址]
- * @param {Object} params [请求时携带的参数]
- */
-// export default (url, params) => {
-//   return new Promise((resolve, reject) => {
-//     instance
-//       .post(url, params)
-//       .then((res) => {
-//         resolve(res.data)
-//       })
-//       .catch((err) => {
-//         reject(err.data)
-//       })
-//   })
-// }

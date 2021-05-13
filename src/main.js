@@ -32,8 +32,6 @@ app.config.globalProperties.$xhr = xhr
 app.config.globalProperties.$post = post
 app.config.globalProperties.$echarts = echarts
 
-
-
 router.beforeEach(({meta,path}, from, next) => {
   // to: Route: 即将要进入的目标 路由对象
   // from: Route: 当前导航正要离开的路由

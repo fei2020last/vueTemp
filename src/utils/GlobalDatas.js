@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
   GlobalDatas.baseAxisUrl = '/shj' /*axios地址*/
 } else {
   // GlobalDatas.baseAxisUrl = '/dev' /*axios地址*/
-  GlobalDatas.baseAxisUrl = '192.168.7.30:8088' /*axios地址*/
+  GlobalDatas.baseAxisUrl = 'http://192.168.7.30:8088';/*axios地址*/
 }
 
 

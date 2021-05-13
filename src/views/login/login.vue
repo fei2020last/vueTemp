@@ -3,7 +3,7 @@
   <div class="loginPage">
     <h1>欢迎来到登录页</h1>
     <h2>{{netError}}</h2>
-    <h2 style="color:#42b983" @click="goIndex()">跳转到首页</h2>
+    <el-button type="success" @click="goLogin()">跳转首页</el-button>
   </div>
 </template>
 
@@ -19,7 +19,11 @@ export default {
   data() {
     //这里存放数据
     return {
-      netError:this.$datas.netError
+      loginForm:{
+        username: 'admin',
+        password: '123456'
+      },
+      netError: this.$datas.netError
     }
   },
   //计算属性
@@ -28,11 +32,21 @@ export default {
   watch: {},
   //方法集合
   methods: {
-    initMethod() {},
-
-    goIndex() {
-      this.$router.push({ name: "index" });
-    },
+    goLogin() {
+      this.$xhr
+        .login(this.loginForm)
+        .then((res) => {
+          console.log('res====>', res)
+          if (res.data) {
+            this.$router.push({ name: 'index' })
+          }
+        })
+        .catch((e) => {
+          console.log(e)
+          console.log('登陆失败')
+          //this.$message.error('用户名或密码错误')
+        })
+    }
   },
   //生命周期 - 创建之前
   beforeCreate() {},

@@ -20,8 +20,7 @@ export default {
   watch: {
     $route: {
       handler(newRouter) {
-        console.log('this.$route', this.$route)
-        console.log('newRouter', newRouter)  
+        // console.log('this.$route', this.$route)  console.log('newRouter', newRouter)
         this.curTagName = newRouter.name
       },
       immediate: true
