@@ -2,6 +2,7 @@
 <template>
   <div class="loginPage">
     <h1>欢迎来到登录页</h1>
+    <h2>{{netError}}</h2>
     <h2 style="color:#42b983" @click="goIndex()">跳转到首页</h2>
   </div>
 </template>
@@ -17,7 +18,9 @@ export default {
   components: {},
   data() {
     //这里存放数据
-    return {}
+    return {
+      netError:this.$datas.netError
+    }
   },
   //计算属性
   computed: {},
