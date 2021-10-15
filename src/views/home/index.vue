@@ -1,9 +1,10 @@
-<!-- 登录页 -->
+<!-- 首页 -->
 <template>
-  <div class="loginPage">
-    <h1>欢迎来到登录页</h1>
-    <h2>{{netError}}</h2>
-    <el-button type="success" @click="goLogin()">跳转首页</el-button>
+  <div class="index">
+    <!-- 卡在VUE3不能使用Element-UI -->
+    <el-select></el-select>
+    <el-button type="primary" size="small">主要按钮</el-button>
+    <el-button type="success">成功按钮</el-button>
   </div>
 </template>
 
@@ -12,42 +13,20 @@
 //例如：import 《组件名称》 from '《组件路径》';
 
 export default {
-  name: 'login',
+  name: 'index',
   props: [],
   //import引入的组件需要注入到对象中才能使用
   components: {},
   data() {
     //这里存放数据
-    return {
-      loginForm:{
-        username: 'admin',
-        password: '123456'
-      },
-      netError: this.$datas.netError
-    }
+    return {}
   },
   //计算属性
   computed: {},
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {
-    goLogin() {
-      this.$xhr
-        .login(this.loginForm)
-        .then((res) => {
-          console.log('res====>', res)
-          if (res.data) {
-            this.$router.push({ name: 'index' })
-          }
-        })
-        .catch((e) => {
-          console.log(e)
-          console.log('登陆失败')
-          //this.$message.error('用户名或密码错误')
-        })
-    }
-  },
+  methods: {},
   //生命周期 - 创建之前
   beforeCreate() {},
   //生命周期 - 创建完成（可以访问当前this实例）
@@ -68,8 +47,8 @@ export default {
   activated() {}
 }
 </script>
-<style lang='less'>
+<style lang="less">
 //@import url(); 引入公共css类
-.loginPage {
+.index {
 }
 </style>

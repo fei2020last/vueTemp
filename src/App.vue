@@ -1,12 +1,5 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-    <div
-      class="copyWriting"
-      :style="{ color: curTagName === 'homePage' ? '#ffffff' : '' }"
-      v-if="curTagName !== 'login'"
-    >*本模板仅供参考，不用于考核和发布</div>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -20,7 +13,8 @@ export default {
   watch: {
     $route: {
       handler(newRouter) {
-        // console.log('this.$route', this.$route)  console.log('newRouter', newRouter)
+        console.log('this.$route', this.$route)
+        console.log('newRouter', newRouter)
         this.curTagName = newRouter.name
       },
       immediate: true
@@ -42,12 +36,4 @@ html {
   min-width: 1580px;
   overflow: hidden;
 }
-.copyWriting {
-  position: absolute;
-  left: 45%;
-  bottom: 4px;
-  font-size: 14px;
-  color: #666;
-}
 </style>
-
