@@ -13,6 +13,10 @@ import * as echarts from 'echarts';
 //element+
 import ElementPlus from 'element-plus'
 import 'element-plus/lib/theme-chalk/index.css'
+//View UI
+import ViewUI from 'view-design';
+import 'view-design/dist/styles/iview.css';
+
 import helloworld from '@/components/HelloWorld.vue'
 
 const app = createApp(App)
@@ -21,6 +25,7 @@ app.component('helloworld', {
 })
 app.use(router)
 app.use(ElementPlus)
+app.use(ViewUI)
 app.mount('#app')
 
 //使用global内的全局变量
