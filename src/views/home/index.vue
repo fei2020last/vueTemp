@@ -2,7 +2,6 @@
 <template>
   <div class="index">
     <!-- 卡在VUE3不能使用Element-UI -->
-    <el-select></el-select>
     <el-button type="primary" size="small">主要按钮</el-button>
     <el-button type="success">成功按钮</el-button>
   </div>
