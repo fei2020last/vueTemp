@@ -10,9 +10,13 @@ import {
   global
 } from './utils/global'
 import * as echarts from 'echarts';
-//element+
+
+//element-plus（版本：1.0.1-beta.17，不同版本引入的css也不一样，详见官方文档--快速开始）
 import ElementPlus from 'element-plus'
 import 'element-plus/lib/theme-chalk/index.css'
+//版本：1.2.0-beta.3
+// import 'element-plus/dist/index.css'
+
 //View UI
 // import ViewUI from 'view-design';
 // import 'view-design/dist/styles/iview.css';
